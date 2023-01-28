@@ -1,13 +1,15 @@
 @import "config";
 @import "home";
+@import "menus";
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
-.body {
+
+body {
     width: 100%;
     padding: 0;
-    margin: -10px;
+    margin: 0;
     @include primary_font;
 }
 
@@ -17,6 +19,8 @@ h1 {
 
 h2 {
     @include primary_font;
+    font-weight: 100;
+    font-size: 20px;
 }
 
 h3 {
@@ -47,68 +51,5 @@ h3 {
 img {
     height: 100%;
     width: 100%;
-
-}
-
-.location {
-    @include row;
-    @include center;
-    width: 100%;
-    height: 40px;
-    margin: 0;
-    background-color: rgb(178, 175, 175);
-    border-bottom: 2px solid lightgray;
-    box-shadow: 0 2px 6px -2px gray inset;
-
-}
-
-.titles {
-    @include center;
-    @include column;
-    background-color: lightgray;
-    height: 400px;
-    width: 100%;
-
-}
-
-
-.button-explore {
-    @include center;
-    height: 50px;
-    width: 300px;
-    border: solid $secondary-color 2px;
-    border-radius: 50px;
-
-    background: linear-gradient(to bottom,
-            rgba($secondary-color, 0.9),
-            rgba(#873a72, 2.5), );
-
-    &__text {
-        font-size: 20px;
-        text-align: center;
-        color: white;
-        @include primary_font;
-    }
-
-}
-
-.how_it_works {
-    @include center;
-    flex-direction: column;
-
-    &__button {
-        @include row;
-    }
-}
-
-.restaurants {
-    @include center;
-    @include column;
-    background-color: #ededed;
-    width: 100%;
-    height: 1100px;
-    gap: 15px;
-
-
 
 }
