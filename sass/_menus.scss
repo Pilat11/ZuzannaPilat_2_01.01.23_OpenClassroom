@@ -1,0 +1,201 @@
+.menus_logo_container {
+    @include row;
+    margin-left: 300px;
+    width: 100%;
+    margin: 0;
+
+    a {
+        text-decoration: none;
+        color: black;
+
+    }
+
+    .logo {
+        width: 160px;
+        height: 30px;
+        padding: 10px;
+        padding-left: 50px;
+    }
+
+    .fas {
+        width: 20px;
+        padding: 20px;
+        margin: 0;
+    }
+}
+
+
+.menus_main {
+    width: 100%;
+    @include column;
+
+
+    img {
+        width: 100%;
+        height: 300px;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .menus_list {
+        background-color: $secondary-background-color;
+        width: 100%;
+
+        padding-top: -80px;
+        position: relative;
+        z-index: 2;
+        margin-top: 230px;
+        border-radius: 25px 25px 0 0;
+
+        .menus_card_header {
+            @include row;
+            width: 100%;
+            padding: 0;
+            margin: 20px 0 0 0;
+
+            h1 {
+                width: 70%;
+                font-size: 26px;
+                @include secondary_font;
+                line-height: 5px;
+                padding-left: 30px;
+                padding-top: 20px;
+                font-weight: 200;
+
+
+            }
+
+            .card_icon {
+                width: 30%;
+                @include center;
+            }
+
+
+            .heart-full {
+                position: absolute;
+                opacity: 0;
+                @include transition-point-6;
+                background: -webkit-gradient(linear, right top, right bottom, from($primary-color), to($secondary-color));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 28px;
+
+            }
+
+            .heart-empty {
+                color: black;
+                font-size: 28px;
+                font-weight: 100;
+                -webkit-text-stroke: 2px $secondary-background-color;
+
+            }
+
+            &:hover .heart-full {
+                opacity: 1;
+
+            }
+
+        }
+
+        .menus_filters {
+            @include column;
+            width: 100%;
+            gap: 15px;
+            margin: 0;
+            padding: -10px;
+            margin: 0;
+
+            .underline-small {
+
+                position: relative;
+                font-size: 18px;
+                margin-left: 20px;
+                font-weight: 300;
+                line-height: 35px;
+            }
+
+            .underline-small::after {
+                content: '';
+                height: 3px;
+                width: 13%;
+                background-color: $tertiary-color;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+
+
+            &__filter {
+
+                width: 95%;
+                background-color: white;
+                border-radius: 20px;
+                margin-left: 10px;
+                box-shadow: 0 5px 5px -5px darkgray;
+                position: relative;
+                padding: 0;
+
+                h6 {
+                    position: absolute;
+                    bottom: -20%;
+                    right: 5%;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+
+            &__filter--text {
+                @include column;
+                width: 80%;
+                margin: 0 0 20px 0;
+                position: relative;
+                line-height: 6px;
+
+                h4 {
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin: 20px 1px 5px 10px;
+                    line-height: 22px;
+                }
+
+                h5 {
+                    font-size: 15px;
+                    font-weight: 200;
+                    margin: 10px 0 0 10px;
+                    line-height: 10px;
+                }
+
+
+            }
+
+        }
+    }
+}
+
+
+.menus_button-explore {
+    @include center;
+    height: 50px;
+    width: 200px;
+    border-radius: 50px;
+    box-shadow: 0 10px 10px -5px darkgray;
+    margin: 40px 0 70px 80px;
+
+    background: linear-gradient(to bottom right,
+            rgba($secondary-color, 0.9),
+            rgba($primary-color, 2.5), );
+
+    &__text {
+        font-size: 20px;
+        text-align: center;
+        color: white;
+        @include primary_font;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+}

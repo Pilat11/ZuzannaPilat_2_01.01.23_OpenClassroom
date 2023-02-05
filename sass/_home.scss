@@ -1,3 +1,17 @@
+.logo_container {
+    @include center;
+    margin-left: 300px;
+    width: 100%;
+    margin: 0;
+}
+
+.logo {
+    width: 160px;
+    height: 30px;
+    @include center;
+    padding: 10px;
+}
+
 .location {
     @include row;
     @include center;
@@ -5,8 +19,7 @@
     height: 40px;
     margin: 0;
     background-color: $secondary-background-color;
-    border-bottom: 2px solid lightgray;
-    box-shadow: 0 2px 6px -2px gray inset;
+    box-shadow: 0 7px 6px -6px grey inset;
 
     .fa-location-dot {
         padding-right: 10px;
@@ -169,6 +182,8 @@
     width: 100%;
     height: 1300px;
     gap: 15px;
+    padding: 0;
+    margin: 0;
 
     h2 {
         font-size: 30px;
@@ -179,26 +194,92 @@
     .card {
         @include card;
         margin-left: 15px;
+        position: relative;
+
 
         &__img {
             height: 170px;
+            max-height: 170px;
             width: 100%;
-        }
+            position: relative;
+            overflow: hidden;
 
-        &__text {
-            margin-left: 20px;
-            line-height: 1px;
+            .new_button {
+                background: $tertiary-color;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 0;
+                width: 80px;
+                height: 30px;
+                border-radius: 5%;
 
-            h4 {
-                font-weight: 500;
-                font-size: 20px;
+                h4 {
+                    color: #008766;
+                    position: absolute;
+                    font-size: 14px;
+                    margin: 6px 0 0 25px;
+                    padding: 0;
+                }
             }
 
-            h5 {
-                font-weight: 200;
-                font-size: 18px;
+        }
+
+        .card__footer {
+            @include row;
+            width: 90%;
+            justify-content: space-between;
+            padding-left: 20px;
+
+            .card__text {
+                width: 70%;
+                line-height: 1px;
+
+                h4 {
+                    font-weight: 500;
+                    font-size: 20px;
+                }
+
+                h5 {
+                    font-weight: 200;
+                    font-size: 18px;
+                }
+            }
+
+            .card_icon {
+                width: 30%;
+                @include right;
+                position: relative;
+                margin: 30px 10px;
+
+
+                .heart-full {
+                    position: absolute;
+                    opacity: 0;
+                    @include transition-point-6;
+                    background: -webkit-gradient(linear, right top, right bottom, from($primary-color), to($secondary-color));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 28px;
+
+                }
+
+                .heart-empty {
+                    color: black;
+                    font-size: 28px;
+                    font-weight: 100;
+                    -webkit-text-stroke: 2px white;
+
+                }
+
+                &:hover .heart-full {
+                    opacity: 1;
+
+                }
+
             }
         }
+
     }
 
     a {
@@ -207,14 +288,28 @@
 }
 
 .footer {
-    @include footer;
+    @include column;
     width: 100%;
     height: 200px;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(43, 42, 42);
+
+    img {
+        z-index: 0;
+        width: 50%;
+        height: 18px;
+        filter: invert(1);
+        padding: 20px 0 15px 0;
+        margin: 0;
+    }
 
     ul {
+        padding-top: 0;
         list-style-type: none;
-        margin-top: 30px;
         line-height: 30px;
+        margin: 0;
+        z-index: 1;
 
         .fas {
             margin-right: 10px;

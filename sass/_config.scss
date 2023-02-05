@@ -1,7 +1,7 @@
 $primary-color: #9356DC;
 $secondary-color: #ff79DA;
 $tertiary-color: #99E2D0;
-$primary-background-color: #f6f6f6;
+$primary-background-color: #f6f6f6; 
 $secondary-background-color: rgba(234, 234, 234, 255);
 
 
@@ -17,6 +17,12 @@ $secondary-background-color: rgba(234, 234, 234, 255);
     justify-content: flex-start;
 }
 
+@mixin right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+}
 
 @mixin row {
     display: flex;
@@ -40,6 +46,10 @@ $secondary-background-color: rgba(234, 234, 234, 255);
     font-family: 'Roboto', sans-serif;
 }
 
+@mixin secondary_font {
+    font-family: 'Shrikhand';
+}
+
 @mixin card {
     background: white;
     box-shadow: 1px 1px 10px darkgray;
@@ -59,15 +69,4 @@ $secondary-background-color: rgba(234, 234, 234, 255);
         color: black;
         text-decoration: none;
     }
-}
-
-@mixin footer {
-    display: block;
-    background-color: rgb(49, 48, 48);
-    background-image:
-        url("/img/logo/ohmyfood@2x.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom center, 50%, 50%;
-
 }
