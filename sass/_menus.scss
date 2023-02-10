@@ -1,3 +1,8 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
 .menus_logo_container {
     @include row;
     margin-left: 300px;
@@ -13,8 +18,7 @@
     .logo {
         width: 160px;
         height: 30px;
-        padding: 10px;
-        padding-left: 50px;
+        margin: auto;
     }
 
     .fas {
@@ -28,12 +32,16 @@
 .menus_main {
     width: 100%;
     @include column;
+    @include center;
+    position: relative;
 
 
     img {
         width: 100%;
         height: 300px;
         padding: 0;
+        top: 0;
+        right: 0;
         position: absolute;
         z-index: 1;
     }
@@ -106,6 +114,8 @@
             padding: -10px;
             margin: 0;
 
+
+
             .underline-small {
 
                 position: relative;
@@ -125,77 +135,148 @@
                 bottom: 0;
             }
 
-
-            &__filter {
-
-                width: 95%;
-                background-color: white;
-                border-radius: 20px;
-                margin-left: 10px;
-                box-shadow: 0 5px 5px -5px darkgray;
-                position: relative;
-                padding: 0;
-
-                h6 {
-                    position: absolute;
-                    bottom: -20%;
-                    right: 5%;
-                    font-size: 16px;
-                    font-weight: 500;
-                }
-            }
-
-            &__filter--text {
+            &_row1 {
                 @include column;
-                width: 80%;
-                margin: 0 0 20px 0;
+                margin: 0;
                 position: relative;
-                line-height: 6px;
+                gap: 15px;
 
-                h4 {
-                    font-size: 18px;
-                    font-weight: 500;
-                    margin: 20px 1px 5px 10px;
-                    line-height: 22px;
+
+
+                &__filter {
+
+                    width: 95%;
+                    background-color: white;
+                    border-radius: 20px;
+                    margin-left: 10px;
+                    box-shadow: 0 5px 5px -5px darkgray;
+                    padding: 0 0 5px 0;
+                    animation: fade-in, slide-up;
+                    animation-duration: 6s;
+                    opacity: 0;
+                    animation-fill-mode: forwards;
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.3s;
+
+                    @for $i from 1 through 10 {
+                        &--#{$i} {
+                            animation-delay: 400ms * $i;
+
+                        }
+                    }
+
                 }
 
-                h5 {
-                    font-size: 15px;
-                    font-weight: 200;
-                    margin: 10px 0 0 10px;
-                    line-height: 10px;
+
+                .checkbox {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 1;
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 0.3;
+
                 }
 
 
+                .checkbox:checked~.menus_filters_row1__filter__text {
+                    width: 80%;
+                }
+
+                .checkbox:checked~.tickmark {
+                    opacity: 1;
+                    width: 20%;
+
+                }
+
+                &__filter__text {
+                    @include column;
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    line-height: 6px;
+                    display: inline-block;
+                    position: relative;
+                    transition: width 0.3s;
+
+                    h4 {
+                        width: 80%;
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin: 20px 0 10px 10px;
+                        line-height: 22px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    h5 {
+                        width: 80%;
+                        font-size: 15px;
+                        font-weight: 200;
+                        margin: 10px 0 0 10px;
+                        line-height: 18px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+
+                    }
+
+                    h6 {
+                        position: absolute;
+                        top: 20%;
+                        right: 5%;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+
+                }
+
+                .tickmark {
+                    background: $tertiary-color;
+                    width: 0px;
+                    height: 100px;
+                    top: 0;
+                    right: 0;
+                    opacity: 0;
+                    position: absolute;
+                    transition: all 0.3s;
+
+                }
             }
 
         }
-    }
-}
 
-
-.menus_button-explore {
-    @include center;
-    height: 50px;
-    width: 200px;
-    border-radius: 50px;
-    box-shadow: 0 10px 10px -5px darkgray;
-    margin: 40px 0 70px 80px;
-
-    background: linear-gradient(to bottom right,
-            rgba($secondary-color, 0.9),
-            rgba($primary-color, 2.5), );
-
-    &__text {
-        font-size: 20px;
-        text-align: center;
-        color: white;
-        @include primary_font;
     }
 
-    h3 {
-        font-size: 18px;
-        font-weight: 400;
-    }
 
+    .menus_button-explore {
+        @include center;
+        height: 50px;
+        width: 200px;
+        border-radius: 50px;
+        box-shadow: 0 10px 10px -5px darkgray;
+        margin: 40px auto;
+
+        background: linear-gradient(to bottom right,
+                rgba($secondary-color, 0.9),
+                rgba($primary-color, 2.5), );
+
+        &__text {
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            @include primary_font;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+    }
 }

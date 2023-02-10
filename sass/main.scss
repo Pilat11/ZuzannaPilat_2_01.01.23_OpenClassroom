@@ -2,6 +2,8 @@
 @import "animation";
 @import "home";
 @import "menus";
+@import "responsive";
+@import "menus_responsive";
 
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -32,13 +34,29 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
+    bottom: 0;
+    right: 0;
     @include center;
-    background: darkgray;
+    background: #f3f3f398;
+    animation: loaded 0.75s 1.5s ease-in-out forwards;
+    z-index: 1000;
+
+
+    &::after {
+
+        content: "";
+        width: 75px;
+        height: 75px;
+        border: 15px solid $tertiary-color;
+        border-top-color: $primary-color;
+        border-radius: 50%;
+        animation: rotation 0.75s ease infinite;
+    }
+
+
 
 }
+
 
 h1 {
     @include primary_font;

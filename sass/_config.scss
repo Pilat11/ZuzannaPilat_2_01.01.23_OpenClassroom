@@ -1,7 +1,7 @@
 $primary-color: #9356DC;
 $secondary-color: #ff79DA;
 $tertiary-color: #99E2D0;
-$primary-background-color: #f6f6f6; 
+$primary-background-color: #f6f6f6;
 $secondary-background-color: rgba(234, 234, 234, 255);
 
 
@@ -37,7 +37,13 @@ $secondary-background-color: rgba(234, 234, 234, 255);
 }
 
 @mixin desktop {
-    @media screen and (min-width:1200px) {
+    @media screen and (min-width:992px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 768px) and (max-width: 992px) {
         @content;
     }
 }
@@ -48,25 +54,4 @@ $secondary-background-color: rgba(234, 234, 234, 255);
 
 @mixin secondary_font {
     font-family: 'Shrikhand';
-}
-
-@mixin card {
-    background: white;
-    box-shadow: 1px 1px 10px darkgray;
-    width: 90%;
-    height: 250px;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.6s ease-in-out;
-    margin: 20px;
-
-
-    &__image {
-        width: 100%;
-    }
-
-    &__text {
-        color: black;
-        text-decoration: none;
-    }
 }
