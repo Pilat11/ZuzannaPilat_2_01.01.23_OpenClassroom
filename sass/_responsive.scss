@@ -322,27 +322,25 @@
 
     }
 
-
     .footer {
         @include column;
         width: 100%;
         margin: 0;
-        padding: 10px 0;
+        padding: 20px 0 15px 0;
         background-color: rgb(43, 42, 42);
         position: relative;
 
         img {
             z-index: 0;
-            width: 20%;
             height: 18px;
             filter: invert(1);
-            padding: 20px 0 5px 0;
-            margin: auto;
+            padding: 5px;
+            margin: 0 0 0 -44%;
+
         }
 
         ul {
-            @include row;
-            padding: 10px 0;
+            padding-top: 0;
             list-style-type: none;
             line-height: 30px;
             margin: 0;
@@ -354,11 +352,12 @@
 
             li {
                 color: white;
-                margin: auto;
                 text-decoration: none;
                 font-size: 16px;
             }
         }
+
+
     }
 }
 
@@ -688,26 +687,28 @@
     }
 
 
+
+
+
     .footer {
         @include column;
         width: 100%;
         margin: 0;
-        padding: 10px 0;
+        padding: 20px 0 15px 0;
         background-color: rgb(43, 42, 42);
         position: relative;
 
         img {
             z-index: 0;
-            width: 20%;
             height: 18px;
             filter: invert(1);
-            padding: 20px 0 5px 0;
-            margin: auto;
+            padding: 5px;
+            margin: 0 0 0 -40%;
+
         }
 
         ul {
-            @include row;
-            padding: 10px 0;
+            padding-top: 0;
             list-style-type: none;
             line-height: 30px;
             margin: 0;
@@ -719,9 +720,8 @@
 
             li {
                 color: white;
-                margin: auto;
                 text-decoration: none;
-                font-size: 14px;
+                font-size: 16px;
             }
         }
     }

@@ -47,21 +47,17 @@
     }
 }
 
-@keyframes box-frame-anim {
-    from {
-        left: 0px;
+
+@keyframes tickbox {
+    0% {
+        transform: translateX(100px) rotate(0deg);
     }
 
-    20% {
-        background-color: green;
+    50% {
+        transform: translateX(50px) rotate(360deg);
     }
 
-    80% {
-        background-color: pink;
-    }
-
-    to {
-        animation-timing-function: ease-out;
-        left: 200px;
+    100% {
+        transform: translateY(0px) rotate(0deg);
     }
 }

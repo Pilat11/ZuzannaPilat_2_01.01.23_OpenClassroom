@@ -82,6 +82,7 @@
 
 
                 .heart-full {
+
                     position: absolute;
                     opacity: 0;
                     @include transition-point-6;
@@ -93,6 +94,7 @@
                 }
 
                 .heart-empty {
+
                     color: black;
                     font-size: 28px;
                     font-weight: 100;
@@ -150,7 +152,6 @@
                         animation-fill-mode: forwards;
                         position: relative;
                         overflow: hidden;
-                        transition: all 0.3s;
                         margin: 10px;
 
                         @for $i from 1 through 10 {
@@ -228,6 +229,17 @@
 
                     }
 
+                    .fa-sharp {
+                        color: white;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin: 26px 25px;
+                        font-size: 35px;
+                        opacity: 0;
+
+                    }
+
 
                     .checkbox:checked~.menus_filters_row1__filter__text {
                         width: 80%;
@@ -238,34 +250,34 @@
                         width: 20%;
 
                     }
+                }
 
 
-                    .menus_button-explore {
-                        @include center;
-                        height: 50px;
-                        width: 200px;
-                        border-radius: 50px;
-                        box-shadow: 0 10px 10px -5px darkgray;
-                        margin: 40px auto;
-                        position: relative;
+                .menus_button-explore {
+                    @include center;
+                    height: 50px;
+                    width: 200px;
+                    border-radius: 50px;
+                    box-shadow: 0 10px 10px -5px darkgray;
+                    margin: 40px auto;
+                    position: relative;
 
-                        background: linear-gradient(to bottom right,
-                                rgba($secondary-color, 0.9),
-                                rgba($primary-color, 2.5), );
+                    background: linear-gradient(to bottom right,
+                            rgba($secondary-color, 0.9),
+                            rgba($primary-color, 2.5), );
 
-                        &__text {
-                            font-size: 20px;
-                            text-align: center;
-                            color: white;
-                            @include primary_font;
-                        }
-
-                        h3 {
-                            font-size: 18px;
-                            font-weight: 400;
-                        }
-
+                    &__text {
+                        font-size: 20px;
+                        text-align: center;
+                        color: white;
+                        @include primary_font;
                     }
+
+                    h3 {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+
                 }
             }
         }
@@ -424,7 +436,6 @@
                         animation-fill-mode: forwards;
                         position: relative;
                         overflow: hidden;
-                        transition: all 0.3s;
                         margin: 10px;
 
                         @for $i from 1 through 10 {
@@ -502,15 +513,31 @@
 
                     }
 
+                    .fa-sharp {
+                        color: white;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin: 26px 20px;
+                        font-size: 35px;
+                        opacity: 0;
+
+                    }
+
 
                     .checkbox:checked~.menus_filters_row1__filter__text {
-                        width: 80%;
+                        width: 70%;
                     }
 
                     .checkbox:checked~.tickmark {
                         opacity: 1;
-                        width: 20%;
+                        width: 30%;
 
+                    }
+
+                    .checkbox:checked~.fa-sharp {
+                        opacity: 1;
+                        animation: tickbox 0.8s;
                     }
 
 
