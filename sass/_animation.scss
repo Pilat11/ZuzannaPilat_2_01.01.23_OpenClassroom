@@ -29,11 +29,11 @@
 
 @keyframes slide-up {
     0% {
-        transform: translateY(15%);
+        transform: translateY(30px);
     }
 
     100% {
-        transform: translateY (0%);
+        transform: translateY (0);
     }
 }
 
@@ -54,7 +54,7 @@
     }
 
     50% {
-        transform: translateX(50px) rotate(360deg);
+        transform: translateX(50px) rotate(-360deg);
     }
 
     100% {
