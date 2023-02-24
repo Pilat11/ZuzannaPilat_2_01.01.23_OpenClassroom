@@ -30,6 +30,20 @@ body {
     @include primary_font;
 }
 
+.loader_background {
+    position: fixed;
+    background-color: rgb(169, 169, 169, );
+    width: 100%;
+    height: 100%;
+    @include center;
+    z-index: 999;
+    opacity: 1;
+    animation: loaded 0.75s 1.6s ease-in-out forwards;
+
+
+}
+
+
 .loader {
     position: fixed;
     top: 0;
@@ -37,8 +51,7 @@ body {
     bottom: 0;
     right: 0;
     @include center;
-    background: #f3f3f398;
-    animation: loaded 0.75s 1.5s ease-in-out forwards;
+    animation: loaded 0.75s 1s ease-in-out forwards;
     z-index: 1000;
 
 
@@ -51,6 +64,7 @@ body {
         border-top-color: $primary-color;
         border-radius: 50%;
         animation: rotation 0.75s ease infinite;
+
     }
 
 

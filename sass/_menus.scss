@@ -49,8 +49,7 @@
     .menus_list {
         background-color: $secondary-background-color;
         width: 100%;
-
-        padding-top: -80px;
+        padding-top: 0px;
         position: relative;
         z-index: 2;
         margin-top: 230px;
@@ -60,17 +59,18 @@
             @include row;
             width: 100%;
             padding: 0;
-            margin: 20px 0 0 0;
+            margin: 0;
 
             h1 {
+                display: flex;
+                flex-wrap: wrap;
                 width: 70%;
                 font-size: 26px;
                 @include secondary_font;
-                line-height: 5px;
+                line-height: 25px;
                 padding-left: 30px;
                 padding-top: 20px;
                 font-weight: 200;
-
 
             }
 
@@ -113,7 +113,7 @@
             width: 100%;
             gap: 15px;
             margin: 0;
-            padding: -10px;
+            padding: 0;
             margin: 0;
 
 
@@ -155,7 +155,7 @@
                 box-shadow: 0 5px 5px -5px darkgray;
                 padding: 0 0 5px 0;
                 animation: fade-in, slide-up;
-                animation-duration: 3s;
+                animation-duration: 1.5s;
                 opacity: 0;
                 animation-fill-mode: forwards;
                 position: relative;
@@ -186,13 +186,13 @@
 
 
                 .fa-sharp {
+                    margin: 20px;
                     color: white;
                     position: absolute;
+                    font-size: 35px;
+                    opacity: 0;
                     top: 0;
                     right: 0;
-                    margin: 26px 28px;
-                    font-size: 29px;
-                    opacity: 0;
 
                 }
 
@@ -270,6 +270,7 @@
                 }
 
                 .tickmark {
+
                     background: $tertiary-color;
                     width: 0px;
                     height: 100px;

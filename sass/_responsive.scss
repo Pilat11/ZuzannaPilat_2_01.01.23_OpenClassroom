@@ -131,7 +131,7 @@
                     height: 120px;
                     width: 100%;
                     border-radius: 20px;
-                    box-shadow: 5px 5px -10px grey;
+                    box-shadow: 5px 5px 10px grey;
                 }
 
                 &:hover {
@@ -177,6 +177,7 @@
                         margin-top: 20px;
                         font-size: 20px;
                     }
+
                 }
             }
 
@@ -200,10 +201,10 @@
         }
 
         .restaurants {
-            @include column;
+            @include row;
             background-color: #ededed;
             width: 100%;
-            gap: 15px;
+            gap: 5px;
             padding: 0;
             margin: auto;
 
@@ -217,7 +218,7 @@
                     position: relative;
                     background: white;
                     box-shadow: 1px 1px 10px darkgray;
-                    width: 40%;
+                    width: 47%;
                     height: 300px;
                     border-radius: 20px;
                     overflow: hidden;
@@ -265,7 +266,7 @@
 
 
                     .card__text {
-                        width: 80%;
+                        width: 90%;
                         line-height: 1px;
 
                         h4 {
@@ -359,7 +360,320 @@
 
 
     }
+
+    /* MENUS_RESPONSIVE STYLESHEET*/
+
+    .menus_logo_container {
+        @include row;
+        margin-left: 300px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+        background: white;
+
+
+        a {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .logo {
+            width: 160px;
+            height: 30px;
+            margin: auto;
+        }
+
+        .fas {
+            width: 20px;
+            padding: 20px;
+            margin: 0;
+        }
+    }
+
+
+    .menus_main {
+        width: 100%;
+        @include column;
+        @include center;
+        position: relative;
+
+
+        img {
+            width: 100%;
+            height: 900px;
+            top: -40%;
+            padding: 0;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .menus_list {
+            background-color: $secondary-background-color;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+            margin-top: 230px;
+            margin-bottom: 0;
+            border-radius: 25px 25px 0 0;
+
+            .menus_card_header {
+                @include row;
+                width: 100%;
+                padding: 0;
+                margin: 20px 0 0 0;
+
+                h1 {
+                    width: 90%;
+                    font-size: 26px;
+                    @include secondary_font;
+                    line-height: 25px;
+                    padding-left: 30px;
+                    padding-top: 20px;
+                    font-weight: 200;
+
+                }
+
+                .card_icon {
+                    width: 10%;
+                    @include center;
+                    margin-left: 50px;
+
+                }
+
+
+                .heart-full {
+
+                    position: absolute;
+                    opacity: 0;
+                    @include transition-point-6;
+                    background: -webkit-gradient(linear, right top, right bottom, from($primary-color), to($secondary-color));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 28px;
+
+                }
+
+                .heart-empty {
+
+                    color: black;
+                    font-size: 28px;
+                    font-weight: 100;
+                    -webkit-text-stroke: 2px $secondary-background-color;
+
+                }
+
+                &:hover .heart-full {
+                    opacity: 1;
+
+                }
+
+            }
+
+            .menus_filters {
+                @include column;
+                width: 100%;
+                margin: auto;
+
+                .underline-small {
+
+                    position: relative;
+                    font-size: 18px;
+                    margin-left: 20px;
+                    font-weight: 300;
+                    line-height: 35px;
+                }
+
+                .underline-small::after {
+                    content: '';
+                    height: 3px;
+                    width: 13%;
+                    background-color: $tertiary-color;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                .row_responsive {
+                    @include row;
+                    margin: 0;
+                    position: relative;
+                    width: 100%;
+
+                    &--1 {
+                        margin-left: 100px;
+                    }
+                }
+
+                .filter {
+                    width: 40%;
+                    background-color: white;
+                    border-radius: 20px;
+                    margin-left: 10px;
+                    box-shadow: 0 5px 5px -5px darkgray;
+                    padding: 0 0 5px 0;
+                    animation: fade-in, slide-up;
+                    animation-duration: 6s;
+                    opacity: 0;
+                    animation-fill-mode: forwards;
+                    position: relative;
+                    overflow: hidden;
+                    margin: 10px;
+
+                    @for $i from 1 through 10 {
+                        &--#{$i} {
+                            animation-delay: 400ms * $i;
+
+                        }
+                    }
+
+
+                    .filter__text {
+                        @include column;
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        line-height: 6px;
+                        position: relative;
+                        transition: width 0.3s;
+
+                        h4 {
+                            width: 70%;
+                            font-size: 18px;
+                            font-weight: 500;
+                            margin: 20px 0 10px 10px;
+                            line-height: 22px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        h5 {
+                            width: 70%;
+                            font-size: 15px;
+                            font-weight: 200;
+                            margin: 10px 0 0 10px;
+                            line-height: 18px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+
+                        }
+
+                        h6 {
+                            position: absolute;
+                            top: 20%;
+                            right: 5%;
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+
+
+                    }
+
+                    .tickmark {
+                        background: $tertiary-color;
+                        width: 0px;
+                        height: 100px;
+                        top: 0;
+                        right: 0;
+                        opacity: 0;
+                        position: absolute;
+                        transition: all 0.3s;
+
+                    }
+
+                    .checkbox {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 1;
+                        opacity: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: all 0.3s;
+
+                    }
+
+                    .fa-sharp {
+                        @include center;
+                        color: white;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        margin: 26px 25px;
+                        font-size: 35px;
+                        opacity: 0;
+
+                    }
+
+
+                    .checkbox:checked~.filter__text {
+                        width: 80%;
+                    }
+
+                    .checkbox:checked~.tickmark {
+                        opacity: 1;
+                        width: 20%;
+
+                    }
+
+                    .checkbox:checked~.fa-sharp {
+                        opacity: 1;
+                        animation: tickbox 0.8s;
+                    }
+                }
+
+                .filter:hover .filter__text {
+                    width: 80%;
+
+                }
+
+                .filter:hover .tickmark {
+                    opacity: 1;
+                    width: 20%;
+
+                }
+
+                .filter:hover .fa-sharp {
+                    opacity: 1;
+                    animation: tickbox 0.8s;
+                }
+
+
+                .menus_button-explore {
+                    @include center;
+                    height: 50px;
+                    width: 200px;
+                    border-radius: 50px;
+                    box-shadow: 0 10px 10px -5px darkgray;
+                    margin: 40px auto;
+                    position: relative;
+
+                    background: linear-gradient(to bottom right,
+                            rgba($secondary-color, 0.9),
+                            rgba($primary-color, 2.5), );
+
+                    &__text {
+                        font-size: 20px;
+                        text-align: center;
+                        color: white;
+                        @include primary_font;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+
+                }
+            }
+        }
+    }
 }
+
 
 @include tablet {
 
@@ -419,7 +733,7 @@
         h2 {
 
             font-size: 18px;
-            padding: auto;
+            padding: 0;
         }
 
         h3 {
@@ -457,7 +771,7 @@
     .how_it_works {
         @include left;
         @include column;
-        height: 200px;
+        height: 170px;
 
         h1 {
             font-size: 25px;
@@ -482,7 +796,7 @@
                 flex-wrap: wrap;
                 width: 250px;
                 height: 60px;
-                gap: 5px;
+                gap: 10px;
                 justify-content: flex-start;
                 margin-left: 5px;
                 background-color: $primary-background-color;
@@ -495,7 +809,7 @@
                     height: 120px;
                     width: 100%;
                     border-radius: 20px;
-                    box-shadow: 5px 5px -10px grey;
+                    box-shadow: 5px 5px 10px grey;
                 }
 
                 &:hover {
@@ -686,10 +1000,6 @@
 
     }
 
-
-
-
-
     .footer {
         @include column;
         width: 100%;
@@ -725,11 +1035,9 @@
             }
         }
     }
-}
 
-/* MENUS_RESPONSIVE STYLESHEET*/
+    /* MENUS_RESPONSIVE*/
 
-@include desktop {
     .menus_logo_container {
         @include row;
         margin-left: 300px;
@@ -796,7 +1104,7 @@
                     width: 90%;
                     font-size: 26px;
                     @include secondary_font;
-                    line-height: 5px;
+                    line-height: 25px;
                     padding-left: 30px;
                     padding-top: 20px;
                     font-weight: 200;
@@ -813,7 +1121,6 @@
 
 
                 .heart-full {
-
                     position: absolute;
                     opacity: 0;
                     @include transition-point-6;
@@ -825,7 +1132,6 @@
                 }
 
                 .heart-empty {
-
                     color: black;
                     font-size: 28px;
                     font-weight: 100;
@@ -864,12 +1170,22 @@
                     bottom: 0;
                 }
 
+                .column_responsive {
+                    @include column;
+
+                }
+
                 .row_responsive {
                     @include row;
                     margin: 0;
                     position: relative;
                     width: 100%;
+
+                    &--1 {
+                        margin-left: 40px;
+                    }
                 }
+
 
                 .filter {
                     width: 40%;
@@ -904,10 +1220,10 @@
                         transition: width 0.3s;
 
                         h4 {
-                            width: 80%;
+                            width: 70%;
                             font-size: 18px;
                             font-weight: 500;
-                            margin: 20px 0 10px 10px;
+                            margin: 20px 0 5px 15px;
                             line-height: 22px;
                             overflow: hidden;
                             text-overflow: ellipsis;
@@ -915,10 +1231,10 @@
                         }
 
                         h5 {
-                            width: 80%;
+                            width: 70%;
                             font-size: 15px;
                             font-weight: 200;
-                            margin: 10px 0 0 10px;
+                            margin: 10px 0 5px 15px;
                             line-height: 18px;
                             overflow: hidden;
                             text-overflow: ellipsis;
@@ -928,7 +1244,7 @@
 
                         h6 {
                             position: absolute;
-                            top: 20%;
+                            top: 35%;
                             right: 5%;
                             font-size: 16px;
                             font-weight: 500;
@@ -957,23 +1273,24 @@
                         opacity: 0;
                         width: 100%;
                         height: 100%;
-                        transition: all 0.3;
+                        transition: all 0.3s;
 
                     }
 
                     .fa-sharp {
+
                         color: white;
                         position: absolute;
                         top: 0;
                         right: 0;
-                        margin: 26px 25px;
-                        font-size: 35px;
+                        font-size: 30px;
                         opacity: 0;
+                        margin: 30px 10px;
 
                     }
 
 
-                    .checkbox:checked~.menus_filters_row1__filter__text {
+                    .checkbox:checked~.filter__text {
                         width: 80%;
                     }
 
@@ -982,297 +1299,29 @@
                         width: 20%;
 
                     }
-                }
-
-
-                .menus_button-explore {
-                    @include center;
-                    height: 50px;
-                    width: 200px;
-                    border-radius: 50px;
-                    box-shadow: 0 10px 10px -5px darkgray;
-                    margin: 40px auto;
-                    position: relative;
-
-                    background: linear-gradient(to bottom right,
-                            rgba($secondary-color, 0.9),
-                            rgba($primary-color, 2.5), );
-
-                    &__text {
-                        font-size: 20px;
-                        text-align: center;
-                        color: white;
-                        @include primary_font;
-                    }
-
-                    h3 {
-                        font-size: 18px;
-                        font-weight: 400;
-                    }
-
-                }
-            }
-        }
-    }
-}
-
-@include tablet {
-    .menus_logo_container {
-        @include row;
-        margin-left: 300px;
-        width: 100%;
-        margin: 0;
-        position: relative;
-        z-index: 1;
-        background: white;
-
-
-        a {
-            text-decoration: none;
-            color: black;
-
-        }
-
-        .logo {
-            width: 160px;
-            height: 30px;
-            margin: auto;
-        }
-
-        .fas {
-            width: 20px;
-            padding: 20px;
-            margin: 0;
-        }
-    }
-
-
-    .menus_main {
-        width: 100%;
-        @include column;
-        @include center;
-        position: relative;
-
-
-        img {
-            width: 100%;
-            height: 900px;
-            top: -40%;
-            padding: 0;
-            position: absolute;
-            z-index: 0;
-        }
-
-        .menus_list {
-            background-color: $secondary-background-color;
-            width: 100%;
-            height: 100%;
-            position: relative;
-            z-index: 2;
-            margin-top: 230px;
-            margin-bottom: 0;
-            border-radius: 25px 25px 0 0;
-
-            .menus_card_header {
-                @include row;
-                width: 100%;
-                padding: 0;
-                margin: 20px 0 0 0;
-
-                h1 {
-                    width: 90%;
-                    font-size: 26px;
-                    @include secondary_font;
-                    line-height: 5px;
-                    padding-left: 30px;
-                    padding-top: 20px;
-                    font-weight: 200;
-
-
-                }
-
-                .card_icon {
-                    width: 10%;
-                    @include center;
-                    margin-left: 50px;
-
-                }
-
-
-                .heart-full {
-                    position: absolute;
-                    opacity: 0;
-                    @include transition-point-6;
-                    background: -webkit-gradient(linear, right top, right bottom, from($primary-color), to($secondary-color));
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-size: 28px;
-
-                }
-
-                .heart-empty {
-                    color: black;
-                    font-size: 28px;
-                    font-weight: 100;
-                    -webkit-text-stroke: 2px $secondary-background-color;
-
-                }
-
-                &:hover .heart-full {
-                    opacity: 1;
-
-                }
-
-            }
-
-            .menus_filters {
-                @include column;
-                width: 100%;
-                margin: auto;
-
-                .underline-small {
-
-                    position: relative;
-                    font-size: 18px;
-                    margin-left: 20px;
-                    font-weight: 300;
-                    line-height: 35px;
-                }
-
-                .underline-small::after {
-                    content: '';
-                    height: 3px;
-                    width: 13%;
-                    background-color: $tertiary-color;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                }
-
-                .row_responsive {
-                    @include row;
-                    margin: 0;
-                    position: relative;
-                    width: 100%;
-                }
-
-
-                .filter {
-                    width: 40%;
-                    background-color: white;
-                    border-radius: 20px;
-                    margin-left: 10px;
-                    box-shadow: 0 5px 5px -5px darkgray;
-                    padding: 0 0 5px 0;
-                    animation: fade-in, slide-up;
-                    animation-duration: 6s;
-                    opacity: 0;
-                    animation-fill-mode: forwards;
-                    position: relative;
-                    overflow: hidden;
-                    margin: 10px;
-
-                    @for $i from 1 through 10 {
-                        &--#{$i} {
-                            animation-delay: 400ms * $i;
-
-                        }
-                    }
-
-
-                    .filter__text {
-                        @include column;
-                        width: 100%;
-                        height: 100%;
-                        margin: 0;
-                        line-height: 6px;
-                        position: relative;
-                        transition: width 0.3s;
-
-                        h4 {
-                            width: 80%;
-                            font-size: 18px;
-                            font-weight: 500;
-                            margin: 20px 0 10px 10px;
-                            line-height: 22px;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                        }
-
-                        h5 {
-                            width: 80%;
-                            font-size: 15px;
-                            font-weight: 200;
-                            margin: 10px 0 0 10px;
-                            line-height: 18px;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-
-                        }
-
-                        h6 {
-                            position: absolute;
-                            top: 20%;
-                            right: 5%;
-                            font-size: 16px;
-                            font-weight: 500;
-                        }
-
-
-                    }
-
-                    .tickmark {
-                        background: $tertiary-color;
-                        width: 0px;
-                        height: 100px;
-                        top: 0;
-                        right: 0;
-                        opacity: 0;
-                        position: absolute;
-                        transition: all 0.3s;
-
-                    }
-
-                    .checkbox {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        z-index: 1;
-                        opacity: 0;
-                        width: 100%;
-                        height: 100%;
-                        transition: all 0.3;
-
-                    }
-
-                    .fa-sharp {
-                        color: white;
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        margin: 26px 20px;
-                        font-size: 35px;
-                        opacity: 0;
-
-                    }
-
-
-                    .checkbox:checked~.menus_filters_row1__filter__text {
-                        width: 70%;
-                    }
-
-                    .checkbox:checked~.tickmark {
-                        opacity: 1;
-                        width: 30%;
-
-                    }
 
                     .checkbox:checked~.fa-sharp {
+                        @include center;
                         opacity: 1;
                         animation: tickbox 0.8s;
                     }
+                }
+
+                .filter:hover .filter__text {
+                    width: 80%;
+
+                }
+
+                .filter:hover .tickmark {
+                    opacity: 1;
+                    width: 20%;
+
+                }
+
+                .filter:hover .fa-sharp {
+                    @include center;
+                    opacity: 1;
+                    animation: tickbox 0.8s;
                 }
 
 

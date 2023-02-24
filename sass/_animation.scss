@@ -24,7 +24,18 @@
         visibility: hidden;
     }
 
+}
 
+@keyframes loaded-background {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 
 @keyframes slide-up {
@@ -33,7 +44,7 @@
     }
 
     100% {
-        transform: translateY (0);
+        transform: translateY(0px);
     }
 }
 

@@ -1,17 +1,12 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    </head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>Oh My Food</title>
 </head>
 
@@ -20,19 +15,19 @@
 
     <header>
         <div class="menus_logo_container">
-            <a href="../index.html" i class="fas fa-arrow-left"></i></a>
-            <img src="../img/logo/ohmyfood.png" class="logo">
+            <a href="../index.html" class="fas fa-arrow-left"></a>
+            <img src="../img/logo/ohmyfood.png" class="logo" alt="logo">
         </div>
     </header>
     <main>
         <div class="menus_main">
 
-            <img src="../img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg">
+            <img src="../img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="The Enchanted Plate image">
 
             <div class="menus_list">
 
                 <div class="menus_card_header">
-                    <h1>The Enchanted <P>Plate</P>
+                    <h1>The Enchanted <br class="menu_paragraph">Plate
                     </h1>
                     <div class="card_icon">
                         <i class="fa-regular fa-heart heart-empty"></i>
@@ -41,52 +36,56 @@
                 </div>
                 <div class="menus_filters">
                     <h2 class="underline-small"> ENTREES</h2>
-                    <div class="row_responsive">
+                    <div class="column_responsive">
+                        <div class="row_responsive row_responsive--1">
 
-                        <div class="filter filter--1">
-                            <input type="checkbox" class="checkbox">
-                            <div class="tickmark"></div>
-                            <i class="fa-sharp fa-solid fa-circle-check"></i>
-                            <div class="filter__text">
-                                <h4>Foie Gras Ravioli</h4>
-                                <h5>With truffle cream</h5>
-                                <h6>25 €</h6>
+                            <div class="filter filter--1">
+                                <input type="checkbox" class="checkbox">
+                                <div class="tickmark"></div>
+                                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                                <div class="filter__text">
+                                    <h4>Foie Gras Ravioli</h4>
+                                    <h5>With truffle cream</h5>
+                                    <h6>25 €</h6>
+                                </div>
+                            </div>
+
+                            <div class="filter filter--2">
+                                <input type="checkbox" class="checkbox">
+                                <div class="tickmark"></div>
+                                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                                <div class="filter__text">
+                                    <h4>Oscietra Caviar</h4>
+                                    <h5>Whith buckwheat blinis</h5>
+                                    <h6>35 €</h6>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="filter filter--2">
-                            <input type="checkbox" class="checkbox">
-                            <div class="tickmark"></div>
-                            <i class="fa-sharp fa-solid fa-circle-check"></i>
-                            <div class="filter__text">
-                                <h4>Oscietra Caviar</h4>
-                                <h5>Whith buckwheat blinis</h5>
-                                <h6>35 €</h6>
+                        <div class="row_responsive row_responsive--1">
+                            <div class="filter filter--3">
+                                <input type="checkbox" class="checkbox">
+                                <div class="tickmark"></div>
+                                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                                <div class="filter__text">
+                                    <h4>Lobster and Leek Foam</h4>
+                                    <h5>Marinated with orange zest</h5>
+                                    <h6>20 €</h6>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="filter filter--3">
-                            <input type="checkbox" class="checkbox">
-                            <div class="tickmark"></div>
-                            <i class="fa-sharp fa-solid fa-circle-check"></i>
-                            <div class="filter__text">
-                                <h4>Lobster and Leek Foam</h4>
-                                <h5>Marinated with orange zest</h5>
-                                <h6>20 €</h6>
-                            </div>
-                        </div>
-
-                        <div class="filter filter--4">
-                            <input type="checkbox" class="checkbox">
-                            <div class="tickmark"></div>
-                            <i class="fa-sharp fa-solid fa-circle-check"></i>
-                            <div class="filter__text">
-                                <h4>Duck Foie Gras</h4>
-                                <h5>With fig jam and grilled baguette</h5>
-                                <h6>35 €</h6>
+                            <div class="filter filter--4">
+                                <input type="checkbox" class="checkbox">
+                                <div class="tickmark"></div>
+                                <i class="fa-sharp fa-solid fa-circle-check"></i>
+                                <div class="filter__text">
+                                    <h4>Duck Foie Gras</h4>
+                                    <h5>With fig jam and grilled baguette</h5>
+                                    <h6>35 €</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
+
 
 
                     <h2 class="underline-small"> MAIN DISH</h2>
@@ -167,11 +166,10 @@
 
 
         </div>
-        </div>
     </main>
     <footer>
         <div class="footer">
-            <img src="../img/logo/ohmyfood@2x.svg">
+            <img src="../img/logo/ohmyfood@2x.svg" alt="logo">
             <ul>
                 <li> <i class="fas fa-utensils"></i>Suggest a restaurant</li>
                 <li><i class="fas fa-handshake-angle"></i>Become a partner</li>
