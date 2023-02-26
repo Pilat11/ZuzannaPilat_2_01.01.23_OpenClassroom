@@ -533,6 +533,9 @@
   position: relative;
   gap: 15px;
 }
+.menus_main .menus_list .menus_filters .row_responsive--1 {
+  margin-top: 15px;
+}
 .menus_main .menus_list .menus_filters .filter {
   width: 95%;
   background-color: white;
